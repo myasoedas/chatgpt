@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Channel: Нейронные сети и веб-разработка</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>YouTube Канал: Нейронные сети и веб-разработка</h1>
+    </header>
+    <nav>
+        <a href="#neural-networks">Нейронные сети</a>
+        <a href="#web-development">Веб-разработка</a>
+    </nav>
+    <section id="neural-networks">
+        <h2>Видео о Нейронных сетях</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section id="web-development">
+        <h2>Видео о Веб-разработке</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_HERE" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript code
+        // Replace VIDEO_ID_HERE with your actual YouTube video IDs
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to replace VIDEO_ID_HERE with actual video IDs
+            function replaceVideoIDs() {
+                const videoContainers = document.querySelectorAll('.video-container');
+                videoContainers.forEach(container => {
+                    const iframe = container.querySelector('iframe');
+                    const src = iframe.src;
+                    const newSrc = src.replace('VIDEO_ID_HERE', 'YOUR_ACTUAL_VIDEO_ID');
+                    iframe.src = newSrc;
+                });
+            }
+
+            // Call the function to replace video IDs
+            replaceVideoIDs();
+
+            // Event listener to replace video IDs when resizing window (for responsive design)
+            window.addEventListener('resize', replaceVideoIDs);
+        });
+    </script>
+</body>
+</html>
